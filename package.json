@@ -1,9 +1,11 @@
 {
   "name": "jasmine-eth-python",
   "repository": "https://github.com/Troublor/jasmine-eth-python",
-  "version": "1.0.0",
   "author": "Troublor",
+  "scripts": {
+    "build:archive": "python3 setup.py sdist bdist_wheel",
+    "publish": "npm run build:archive && twine upload dist/*"
+  },
   "dependencies": {
-
   }
 }
