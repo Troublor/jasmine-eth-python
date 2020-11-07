@@ -11,7 +11,7 @@ Alternatively, use [Golang SDK](https://github.com/Troublor/jasmine-eth-go) or [
 
 ## Installation
 
-Requires Python `>=3.6`
+Requires Python `>=3.7`
 
 ```bash
 pip install jasmine_eth
