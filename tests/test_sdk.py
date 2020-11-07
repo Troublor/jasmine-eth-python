@@ -4,7 +4,7 @@ from web3 import Web3
 from web3.types import TxReceipt
 
 from jasmine_eth import SDK
-from jasmine_eth.sdk import Account, Web3Wrapper
+from jasmine_eth.sdk import Account, _Web3Wrapper
 from tests.utils import async_test
 
 
@@ -22,7 +22,7 @@ class AccountTests(unittest.TestCase):
 class Web3WrapperTests(unittest.TestCase):
     def setUp(self) -> None:
         self.web3 = Web3(Web3.HTTPProvider("http://localhost:8545"))
-        self.wrapper = Web3Wrapper(self.web3)
+        self.wrapper = _Web3Wrapper(self.web3)
 
     @async_test
     async def test_send_transaction(self):
