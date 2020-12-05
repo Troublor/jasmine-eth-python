@@ -2,14 +2,14 @@
   {
     "inputs": [
       {
-        "internalType": "address[]",
-        "name": "initialHolders",
-        "type": "address[]"
+        "internalType": "address",
+        "name": "adminAddress",
+        "type": "address"
       },
       {
-        "internalType": "uint256[]",
-        "name": "initialSupplies",
-        "type": "uint256[]"
+        "internalType": "address",
+        "name": "managerAddress",
+        "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
@@ -165,6 +165,19 @@
     ],
     "name": "Unpaused",
     "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "BURNER_ROLE",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [],
