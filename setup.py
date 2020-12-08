@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="jasmine_eth",  # Replace with your own username
-    version="0.0.2",
+    version="0.0.3",
     author="Troublor",
     author_email="troublor@live.com",
     description="Jasmine Project Ethereum SDK (Python)",
@@ -18,8 +18,8 @@ setuptools.setup(
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.7',
+    python_requires='>=3.6',
     install_requires=[
-        'web3==5.13.0'
+        'web3==5.13.1'
     ]
 )

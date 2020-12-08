@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import asyncio
 import json
 from os import path
@@ -17,9 +15,9 @@ class _Web3Wrapper(object):
     def web3(self) -> Web3:
         return self._web3
 
-    async def send_transaction(self, transaction: TxParams, sender: Account) -> TxReceipt:
+    async def send_transaction(self, transaction: TxParams, sender) -> TxReceipt:
         # TODO implement transaction confirmation requirement
-        loop = asyncio.get_running_loop()
+        loop = asyncio.get_event_loop()
         future = loop.create_future()
 
         # check transaction fields
@@ -167,7 +165,7 @@ class SDK(_Web3Wrapper):
         receipt: TxReceipt = await self.send_transaction(transaction, deployer)
         return receipt["contractAddress"]
 
-    def get_tfc_manager(self, address: str) -> TFCManager:
+    def get_tfc_manager(self, address: str):
         """
         Get the TFCManager contract instance
         :param address: the address of TFCManager contract
@@ -175,7 +173,7 @@ class SDK(_Web3Wrapper):
         """
         return TFCManager(self.web3, address)
 
-    def get_tfc_token(self, address: str) -> TFCToken:
+    def get_tfc_token(self, address: str):
         """
         Get the TFCToken contract instance
         :param address: the address of TFCToken contract
