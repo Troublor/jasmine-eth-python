@@ -5,7 +5,5 @@
   "scripts": {
     "build:archive": "python3 setup.py sdist bdist_wheel",
     "publish": "rm -rf build dist jasmine_eth.egg-info && npm run build:archive && twine upload dist/*"
-  },
-  "dependencies": {
   }
 }
