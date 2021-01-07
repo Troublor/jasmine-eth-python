@@ -1,0 +1,1 @@
+recursive-include jasmine_eth/contracts *.json *.bin

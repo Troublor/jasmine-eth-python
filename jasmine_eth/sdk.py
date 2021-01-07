@@ -114,6 +114,7 @@ class SDK(_Web3Wrapper):
         :param address: the address of the account
         :return: ETH balance in wei
         """
+        address = self.web3.toChecksumAddress(address)
         return self.web3.eth.getBalance(address)
 
     async def transfer(self, recipient: str, amount: int, sender: Account):
@@ -171,6 +172,7 @@ class SDK(_Web3Wrapper):
         :param address: the address of TFCManager contract
         :return: TFCManager contract instance
         """
+        address = self.web3.toChecksumAddress(address)
         return TFCManager(self.web3, address)
 
     def get_tfc_token(self, address: str):
@@ -179,6 +181,7 @@ class SDK(_Web3Wrapper):
         :param address: the address of TFCToken contract
         :return: TFCToken contract instance
         """
+        address = self.web3.toChecksumAddress(address)
         return TFCToken(self.web3, address)
 
 
@@ -197,6 +200,7 @@ class TFCManager(_Web3Wrapper):
 
     def __init__(self, web3: Web3, address: str):
         super().__init__(web3)
+        address = self.web3.toChecksumAddress(address)
         self._contract = self.web3.eth.contract(address=address, abi=self.abi())
 
     def tfc_token_address(self) -> str:
@@ -241,6 +245,7 @@ class TFCToken(_Web3Wrapper):
 
     def __init__(self, web3: Web3, address: str):
         super().__init__(web3)
+        address = web3.toChecksumAddress(address)
         self._contract = self.web3.eth.contract(address=address, abi=self.abi())
 
     @property
